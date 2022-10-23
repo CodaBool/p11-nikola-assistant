@@ -1,0 +1,19 @@
+.circle{
+    height: 25px;
+    width: 25px;
+    border-radius: 10%;
+    background-color: #b6e13d;
+}
+
+.line{
+    height: 800px;
+    width: 2px;
+    border-radius: 10%;
+    background-color: black;
+}
+.red{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: red;
+}

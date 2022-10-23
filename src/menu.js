@@ -45,8 +45,29 @@ export default function menu() {
     }
   }
 
-  function play() {
-    navigate("/game");
+  function checkAndNavigate() {
+    var isChromium = window.chrome;
+    var winNav = window.navigator;
+    var vendorName = winNav.vendor;
+    var isOpera = typeof window.opr !== "undefined";
+    var isIEedge = winNav.userAgent.indexOf("Edg") > -1;
+    var isIOSChrome = winNav.userAgent.match("CriOS");
+
+    if (isIOSChrome) {
+      // is Google Chrome on IOS
+      navigate("/game")
+    } else if (
+      isChromium !== null &&
+      typeof isChromium !== "undefined" &&
+      vendorName === "Google Inc." &&
+      isOpera === false &&
+      isIEedge === false
+    ) {
+      // is Google Chrome
+      navigate("/game")
+    } else { 
+      window.alert('Unfortunately this site only works on Google Chrome')
+    }
   }
 
   return (
@@ -74,7 +95,7 @@ export default function menu() {
           <Row>
             <Button
               className="rightOtherButton me-auto d-block w-50 mx-auto"
-              onClick={() => navigate("/game")}
+              onClick={checkAndNavigate}
             >
               Play
             </Button>

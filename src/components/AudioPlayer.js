@@ -6,6 +6,8 @@ export default function AudioPlayer(file)  {
 
   const toggle = () => setPlaying(!playing);
 
+  audio.volume = 0.3
+
   useEffect(() => {
       playing ? audio.play() : audio.pause();
     },

@@ -1,14 +1,12 @@
-# Voice Driving Game Hackathon
+# Voice Driving Game TadHack 2022
 
-A navigation system that takes in auditory input using Radisys API. <br>
+A navigation system that takes in auditory input using Radisys API. Check out the [live demo](https://p11.codabool.com).
 
-<h4><a href="https://p11.codabool.com/">Live Demo</a></h4>
+> Video Presentation (click on image to go to YouTube)
 
-# Docs
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/pWjcV4JdI08/0.jpg)](https://www.youtube.com/watch?v=pWjcV4JdI08)
 
-#### Bootstrap (style) [doc](https://react-bootstrap.github.io/getting-started/introduction)
-
-#### Threejs - Drei - Fiber [doc](https://docs.pmnd.rs/react-three-fiber/getting-started/introduction)
+> The Nikola Assistant's Team!
 
 ![group d0f09ea08e3ab7b29c24](https://user-images.githubusercontent.com/61883762/196055879-21a8a12d-0106-49d4-ac2e-a0eb8731251d.jpg)
 

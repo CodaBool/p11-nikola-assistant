@@ -1,4 +1,4 @@
-import Modal from "react-bootstrap/Modal";
+import Modal from "react-bootstrap/Modal"
 
 export default function SampleModal({ show, setShow }) {
   return (
@@ -12,7 +12,9 @@ export default function SampleModal({ show, setShow }) {
         <br></br>
         <ul>
           <li>You have 1 minute to finish the game</li>
-          <li>You have 5 commands</li>
+          <li>Your goal is to move the yellow block to the green spot on the map</li>
+          <li>Avoid hitting pedestrians represented with the red spots</li>
+          <li>You have 5 voice commands available to navigate</li>
         </ul>
 
         <b>Commands:</b>

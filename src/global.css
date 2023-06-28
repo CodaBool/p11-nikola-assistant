@@ -35,6 +35,9 @@ html {
   background-repeat:no-repeat;
   height: 100vh;
 } */
+.menuPage {
+  height: 95vh;
+}
 .menuPage button {
   font-size: 2rem;
 }
@@ -307,6 +310,9 @@ a {
   }
   .aboutTech {
     max-width: 100%;
+  }
+  .menuPage {
+    height: 93vh;
   }
 }
 

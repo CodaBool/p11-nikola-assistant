@@ -1,12 +1,14 @@
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import Container from "react-bootstrap/Container";
-import logo from "./assets/group.jpg";
-import screenshot from "./assets/go-left.png";
+import Row from "react-bootstrap/Row"
+import Col from "react-bootstrap/Col"
+import Container from "react-bootstrap/Container"
+import Navigation from '../../components/Navigation.jsx'
+import logo from "/group.jpg"
+import screenshot from "/go-left.png"
 
 export default function About() {
   return (
     <>
+      <Navigation />
       <Container>
         <h1 className="my-3"></h1>
         <Row>

@@ -1,7 +1,7 @@
 import {useState, useEffect} from 'react'
 import { Row } from 'react-bootstrap';
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
-import MicLiveGif from '../assets/mic-live.gif'
+import MicLiveGif from '/mic-live.gif'
 
 export default function Voice({ state, testing, setCmd, hide }) {
   const [message, setMessage] = useState('')
@@ -45,7 +45,6 @@ export default function Voice({ state, testing, setCmd, hide }) {
   if (hide) {
     return null
   }
-
 
   return (
     <div>

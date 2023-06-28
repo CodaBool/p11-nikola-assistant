@@ -1,8 +1,8 @@
-import React, { useState } from "react";
-import Navbar from "react-bootstrap/Navbar";
-import Nav from "react-bootstrap/Nav";
-import { useNavigate, useLocation } from "react-router-dom";
-import Modal from "./Modal";
+import React, { useState } from "react"
+import Navbar from "react-bootstrap/Navbar"
+import Nav from "react-bootstrap/Nav"
+import { useNavigate, useLocation } from "react-router-dom"
+import Modal from "./Modal.jsx"
 
 export default function Navigation() {
   const [show, setShow] = useState();

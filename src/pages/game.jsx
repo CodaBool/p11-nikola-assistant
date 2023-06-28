@@ -1,13 +1,14 @@
 import React, { useRef, useEffect, useState } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
 // import * as THREE from 'three'
-import backgroundImg from './assets/maps.png'
-import Voice from './components/Voice'
-import Modal from './components/gameModal'
-import crashAudio from './assets/audio/car-crash.wav'
-import countAudio from './assets/audio/three-second-countdown.wav'
-import successAudio from './assets/audio/applause01.wav'
-import useAudio from './components/AudioPlayer'
+import backgroundImg from '/maps.png'
+import Voice from '../../components/Voice.jsx'
+import Modal from '../../components/gameModal.jsx'
+import useAudio from '../../components/AudioPlayer.jsx'
+import Navigation from '../../components/Navigation.jsx'
+import crashAudio from '/audio/car-crash.wav'
+import countAudio from '/audio/three-second-countdown.wav'
+import successAudio from '/audio/applause01.wav'
 
 function Box({x, y, peds, setState, position, gameState, setShowModal, playCrashAudio, playSuccessAudio}) {
   const mesh = useRef()
@@ -184,46 +185,49 @@ export default function Game() {
   }, [cmd])
 
   return (
-    <div
-      className="menuPage"
-      style={{
-        backgroundImage: `url(${backgroundImg})`,
-        height: "90vh",
-        backgroundPosition: "center",
-        backgroundSize: "cover",
-        backgroundRepeat: "no-repeat",
-      }}
-    >
-      <Canvas>
-        <ambientLight intensity={0.5} />
-        <pointLight position={[10, 10, 10]} />
-        <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
-        <Box
-          position={playerPosition} x={x} y={y} 
-          peds={peds} 
-          setState={setState} 
-          setShowModal={setShowModal}
-          gameState={state}
-          playCrashAudio={playCrashAudio}
-          playSuccessAudio={playSuccessAudio}
-        />
-        {peds && peds.map((ped, index) => (
-           <Circle 
-            key={index} 
-            goal={ped.goal} 
-            position={[ped.x, ped.y, 0]} 
+    <>
+      <Navigation />
+      <div
+        className="menuPage"
+        style={{
+          backgroundImage: `url(${backgroundImg})`,
+          height: "90vh",
+          backgroundPosition: "center",
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+        }}
+      >
+        <Canvas>
+          <ambientLight intensity={0.5} />
+          <pointLight position={[10, 10, 10]} />
+          <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
+          <Box
+            position={playerPosition} x={x} y={y} 
+            peds={peds} 
+            setState={setState} 
+            setShowModal={setShowModal}
+            gameState={state}
+            playCrashAudio={playCrashAudio}
+            playSuccessAudio={playSuccessAudio}
           />
-        ))}
-      </Canvas>
-      <Modal state={state} playCountdownAudio={playCountdownAudio} show={showModal} setShow={setShowModal} setState={setState} setPlayerPosition={setPlayerPosition} />
-      {/* {cmd === 'up' && <h1 className="text-center">⬆️</h1>}
-      {cmd === 'down' && <h1 className="text-center">⬇️</h1>}
-      {cmd === 'left' && <h1 className="text-center">⬅️</h1>}
-      {cmd === 'right' && <h1 className="text-center">➡️</h1>}
-      {cmd === 'stop' && <h1 className="text-center">🛑</h1>} */}
-      {/* {cmd && <h1 className="text-center">{cmd}</h1>} */}
-      {state === 'play' && <Voice state={state} setCmd={setCmd} hide />}
-    </div>
+          {peds && peds.map((ped, index) => (
+            <Circle 
+              key={index} 
+              goal={ped.goal} 
+              position={[ped.x, ped.y, 0]} 
+            />
+          ))}
+        </Canvas>
+        <Modal state={state} playCountdownAudio={playCountdownAudio} show={showModal} setShow={setShowModal} setState={setState} setPlayerPosition={setPlayerPosition} />
+        {/* {cmd === 'up' && <h1 className="text-center">⬆️</h1>}
+        {cmd === 'down' && <h1 className="text-center">⬇️</h1>}
+        {cmd === 'left' && <h1 className="text-center">⬅️</h1>}
+        {cmd === 'right' && <h1 className="text-center">➡️</h1>}
+        {cmd === 'stop' && <h1 className="text-center">🛑</h1>} */}
+        {/* {cmd && <h1 className="text-center">{cmd}</h1>} */}
+        {state === 'play' && <Voice state={state} setCmd={setCmd} hide />}
+      </div>
+    </>
   )
 }
 

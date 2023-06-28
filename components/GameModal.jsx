@@ -1,9 +1,10 @@
-import { Button } from "react-bootstrap";
-import Modal from "react-bootstrap/Modal";
-import Voice from "./Voice";
+import { Button } from "react-bootstrap"
+import Modal from "react-bootstrap/Modal"
 import { useState } from 'react'
-import lostImg from '../assets/nikola-manager.jpg'
-import wonImg from '../assets/nikola-won.jpg'
+
+import Voice from "./Voice.jsx"
+import lostImg from '/nikola-manager.jpg'
+import wonImg from '/nikola-won.jpg'
 
 export default function CustomModal({ show, setShow, state, setState, setPlayerPosition, playCountdownAudio}) {
   const [counter, setCounter] = useState()

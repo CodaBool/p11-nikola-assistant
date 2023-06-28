@@ -2,12 +2,12 @@ import React, { useState, useEffect } from "react";
 import { Col, Modal, Row } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import { useNavigate } from "react-router-dom";
-import mapsImg from "./assets/maps.png";
+import Navigation from '../../components/Navigation.jsx'
+import mapsImg from "/maps.png";
 
 export default function menu() {
   const [name, setName] = useState("");
   const [nameError, setNameError] = useState("");
-  const [error, setError] = useState("");
   const [show, setShow] = useState();
 
   const navigate = useNavigate();
@@ -74,25 +74,24 @@ export default function menu() {
     <>
       {/* <Button className="nameButton ms-auto d-block" onClick={() => setShow(true)}>{`${name ? name : 'Click to Enter Name'}`}</Button>
       <Button onClick={play}>Play</Button> */}
-
+      <Navigation />
       <div
         className="menuPage"
         style={{
           backgroundImage: `url(${mapsImg})`,
-          height: "90vh",
           backgroundPosition: "center",
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
         }}
       >
         <Col className="pt-5 m-0">
-          <Row className="my-3">
+          <Row className="my-3 w-100">
             <Button
               className="nameButton ms-auto d-block w-50 mx-auto"
               onClick={() => setShow(true)}
             >{`${name ? name : "Click to Enter Name"}`}</Button>
           </Row>
-          <Row>
+          <Row className="my-3 w-100">
             <Button
               className="rightOtherButton me-auto d-block w-50 mx-auto"
               onClick={checkAndNavigate}
@@ -101,15 +100,6 @@ export default function menu() {
             </Button>
           </Row>
         </Col>
-
-        <Row className="p-0 m-0">
-          <video
-            autoPlay
-            loop
-            src="/video/title.mp4"
-            className="w-75 mx-auto"
-          ></video>
-        </Row>
         <Modal
           show={show}
           onHide={() => {
